@@ -16,7 +16,7 @@ resource "aws_subnet" "dev_public_subnet" {
 
 }
 
-//Create Private Subnets
+//Create Private Subnets in 
 resource "aws_subnet" "dev_private_subnet" {
   count             = var.subnet_count.private
   vpc_id            = aws_vpc.dev_vpc.id
