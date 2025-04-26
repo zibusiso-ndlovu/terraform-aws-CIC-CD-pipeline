@@ -5,12 +5,12 @@ on:
    branches:
    - main
    paths:
-   - terraform/**
+   - vpc/**
  pull_request:
    branches:
    - main
    paths:
-   - terraform/**
+   - vpc/**
  
 env:
  # verbosity setting for Terraform logs
