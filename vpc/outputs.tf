@@ -19,13 +19,13 @@ output "D_VPC_cidr_block" {
 }
 
 output "E_Public_Subnet_Ids" {
-value = aws_subnet.dev_public_subnet[*].id
-description ="Public subnet ids"
+  value       = aws_subnet.dev_public_subnet[*].id
+  description = "Public subnet ids"
 }
 
 output "F_Private_Subnet_Ids" {
-value = aws_subnet.dev_private_subnet[*].id
-description ="Private subnet ids"
+  value       = aws_subnet.dev_private_subnet[*].id
+  description = "Private subnet ids"
 }
 
 

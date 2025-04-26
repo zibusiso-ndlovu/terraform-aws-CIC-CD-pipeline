@@ -1,7 +1,7 @@
 //Create Public Subnets
-resource "aws_subnet" "dev_public_subnet" { 
-  count             = var.subnet_count.public  
-  vpc_id            = aws_vpc.dev_vpc.id   
+resource "aws_subnet" "dev_public_subnet" {
+  count             = var.subnet_count.public
+  vpc_id            = aws_vpc.dev_vpc.id
   cidr_block        = var.public_subnet_cidr_blocks[count.index]
   availability_zone = data.aws_availability_zones.available.names[count.index]
 

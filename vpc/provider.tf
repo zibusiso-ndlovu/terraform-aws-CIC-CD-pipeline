@@ -5,11 +5,17 @@ terraform {
       version = "~> 5.0"
     }
   }
+
+  backend "s3" {
+    region = "us-west-2"
+    bucket = "jenkins-server-25-01-2025"
+    key    = "terraform.tfstate"
+  }
 }
 
 provider "aws" {
   region = "us-east-1"
-#  profile = "default"
+  #  profile = "default"
 }
 data "aws_availability_zones" "available" {
   state = "available"

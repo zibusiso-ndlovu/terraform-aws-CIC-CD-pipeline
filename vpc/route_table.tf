@@ -12,7 +12,7 @@ resource "aws_route_table" "dev_public_rt" {
 resource "aws_route_table_association" "public" {
   count          = var.subnet_count.public
   route_table_id = aws_route_table.dev_public_rt.id
-  subnet_id      = 	aws_subnet.dev_public_subnet[count.index].id
+  subnet_id      = aws_subnet.dev_public_subnet[count.index].id
 }
 
 // Create a private route table named "dev_private_rt"

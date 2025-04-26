@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "AWS region"
   type        = string
-  default = "us-east-1"
+  default     = "us-east-1"
 }
 
 variable "common_tags" {
@@ -63,17 +63,17 @@ variable "description" {
   default     = "The RDS Secret Description"
 }
 
-variable lambda_function_name {
-  type = string
+variable "lambda_function_name" {
+  type    = string
   default = "auth"
 }
 
-variable lambda_handler {
+variable "lambda_handler" {
   type    = string
   default = "handler.app"
 }
 
-variable lambda_runtime {
+variable "lambda_runtime" {
   type    = string
   default = "nodejs18.x"
 }
