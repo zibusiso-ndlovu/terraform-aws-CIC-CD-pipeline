@@ -1,0 +1,17 @@
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+*.tfvars
+.terraform/
+.terraform.lock.hcl
+
+# Crash logs
+crash.log
+
+# Editor settings
+.vscode/
+.idea/
+.DS_Store
+
+# OS generated files
+Thumbs.db
