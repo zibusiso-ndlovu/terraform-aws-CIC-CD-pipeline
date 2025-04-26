@@ -62,12 +62,24 @@ jobs:
        run: |
          tflint --format compact
        continue-on-error: true
+       
+     - name: Install Checkov
+       id: checkov_install
+       run: |
+         pip install checkov
+     
+     - name: Run Checkov
+       id: checkov
+       run: |
+         checkov -d . --framework terraform --output cli --quiet
+       continue-on-error: true
  
      - name: Terraform plan
        id: plan
        if: github.event_name == 'pull_request'
        run: terraform plan -no-color -input=false
        continue-on-error: true
+       
     
      - uses: actions/github-script@v6
        if: github.event_name == 'pull_request'
