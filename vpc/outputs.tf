@@ -18,6 +18,7 @@ output "D_VPC_cidr_block" {
   description = "VPC Cidr Block"
 }
 
+
 output "E_Public_Subnet_Ids" {
   value       = aws_subnet.dev_public_subnet[*].id
   description = "Public subnet ids"
