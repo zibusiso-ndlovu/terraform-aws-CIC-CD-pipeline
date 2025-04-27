@@ -62,7 +62,7 @@ jobs:
        run: |
          tflint --format compact
        continue-on-error: true
-       
+
      - name: Install Checkov
        id: checkov_install
        run: |
@@ -115,3 +115,12 @@ jobs:
      - name: Terraform Apply
        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
        run: terraform apply -auto-approve -input=false
+
+     - name: Send Slack Notification
+       if: always()  # always run this step (success or failure)
+       uses: 8398a7/action-slack@v3
+       with:
+         status: ${{ job.status }}
+         fields: repo,commit,message,author
+       env:
+         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
